@@ -16,10 +16,9 @@ let store = null;
  *
  * @param onAuthenticatedCallback
  */
-async function init(onInitCallback) {
+async function init() {
   try {
     authenticated = await keycloak.init({ onLoad: "login-required" })
-    onInitCallback()
   } catch (error) {
     console.error("Keycloak init failed")
     console.error(error)
@@ -36,7 +35,7 @@ async function initStore(storeInstance) {
     store.initOauth(keycloak)
 
     // Show alert if user is not authenticated
-    if (!authenticated) { alert("not authenticated") }
+    // if (!authenticated) { alert("not authenticated") }
   } catch (error) {
     console.error("Keycloak init failed")
     console.error(error)

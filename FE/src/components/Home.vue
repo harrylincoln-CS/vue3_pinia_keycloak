@@ -59,6 +59,15 @@ export default {
       class="mr-15"
       type="button" 
       title="Test persisted state"
+      @click="$store.loginAction"
+    >
+      Login
+    </button>
+    <!-- Test Pinia persisted state button -->
+    <button 
+      class="mr-15"
+      type="button" 
+      title="Test persisted state"
       @click="$store.testAction"
     >
       Test ({{ $store.test }})

@@ -13,6 +13,15 @@ export const useAuthStore = defineStore({
   persist: true,
   getters: {},
   actions: {
+
+    loginAction() {
+      try {
+        keycloakService.CallInit();
+      } catch(e) {
+        console.log('some issue with inititing the service', e)
+      }
+    },
+
     testAction() {
       this.test = !this.test;
     },
